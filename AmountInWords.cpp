@@ -16,6 +16,7 @@ std::string amountInWords(std::string s) {
 		tens_power{ "", "thousand", "million", "billion", "trillion", "quadrillion", "quintillion", "sextillion", "septillion" };
 
 	// TO-DO: Check if the characters are a digit
+	// TO-DO: Check for cents
 	for (std::string::reverse_iterator rit = s.rbegin(); rit != s.rend(); ++rit) {
 		++len;
 		if ((len - 1) % 3 == 0) {	// First Digit
