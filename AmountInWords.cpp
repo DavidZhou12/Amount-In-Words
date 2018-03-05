@@ -17,22 +17,22 @@ std::string amountInWords(std::string s) {
 
 	// TO-DO: Check if the characters are a digit
 	for (std::string::reverse_iterator rit = s.rbegin(); rit != s.rend(); ++rit) {
-		if (len++ > 0) res = ' ' + res;
+		++len;
 		if ((len - 1) % 3 == 0) {	// First Digit
 			n += *rit - '0';
-			res = tens_power[len / 3] + res;
+			res = tens_power[len / 3] + ' ' + res;
 		}
 		else if (len % 3 == 0) {	// Third Digit
 			int tmp = *rit - '0';
 			if (tmp != 0)
-				res = twos[tmp] + " hundred" + res;
+				res = twos[tmp] + " hundred " + res;
 		}
 		else {						// Second Digit
 			n += (*rit - '0') * 10;
 			if (n < 20)
-				res = twos[n] + res;
+				res = twos[n] + ' ' + res;
 			else
-				res = tens[n / 10] + '-' + twos[n % 10] + res;
+				res = tens[n / 10] + '-' + twos[n % 10] + ' ' + res;
 			n = 0;
 		}
 	}
