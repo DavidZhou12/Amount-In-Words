@@ -9,8 +9,8 @@
 std::string amountInWords(std::string s) {
 	int len = 0, n = 0;
 	std::string res,
-		ones[] = { "", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine",
-									"ten", "eleven", "twelve", "thirteen", "fourteen", "fifteen", "sixteen", "seventeen", "eighteen", "nineteen" },
+		ones[] = { "", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine", 
+					"ten", "eleven", "twelve", "thirteen", "fourteen", "fifteen", "sixteen", "seventeen", "eighteen", "nineteen" },
 		tens[] = { "", "", "twenty", "thirty", "forty", "fifty", "sixty", "seventy", "eighty", "ninety" },
 		tens_power[] = { "", "thousand", "million", "billion", "trillion", "quadrillion", "quintillion", "sextillion", "septillion" };
 
