@@ -18,17 +18,15 @@ std::string amountInWords(std::string s) {
 	// TO-DO: Check for cents
 	for (std::string::reverse_iterator rit = s.rbegin(); rit != s.rend(); ++rit) {
 		++len;
-		if ((len - 1) % 3 == 0) {	// First Digit
-			n += *rit - '0';
+		int digit = *rit - '0';
+		if ((len - 1) % 3 == 0) {				// First Digit
+			n += digit;
 			res = tens_power[len / 3] + ' ' + res;
 		}
-		else if (len % 3 == 0) {	// Third Digit
-			int tmp = *rit - '0';
-			if (tmp != 0)
-				res = ones[tmp] + " hundred " + res;
-		}
-		else {						// Second Digit
-			n += (*rit - '0') * 10;
+		else if (len % 3 == 0 && digit != 0)	// Third Digit
+			res = ones[digit] + " hundred " + res;
+		else {									// Second Digit
+			n += digit * 10;
 			if (n < 20)
 				res = ones[n] + ' ' + res;
 			else
