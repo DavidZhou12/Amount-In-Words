@@ -39,7 +39,7 @@ std::string amountInWords(std::string s) {
 	res[0] = toupper(res[0]);
 
 	return res;
-}
+} // end amountInWords
 
 int main() {
 	std::string s;
@@ -48,5 +48,5 @@ int main() {
 	std::cout << amountInWords(s) << std::endl;
 
     return 0;
-}
+} // end main
 
